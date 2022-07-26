@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+    color: white !important;
+    font-weight: bold;
+}
+.navbar-brand{
+    font-size: 25px !important;
+}
+li a{
+    font-size: 17px;
+    padding-right: 30px !important;
+    padding: 15px !important;
+}

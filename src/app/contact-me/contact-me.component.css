@@ -1,0 +1,23 @@
+
+.starDash{
+    background-color: #2C3E50;
+    border-radius: 5px;
+    margin: 15px;
+    height: 4px;
+    width: 120px;
+}
+.btn{
+    width: 100px;
+    height: 70px;
+    border-radius: 7px;
+}
+label{
+    position: absolute
+}
+textarea, input{
+    margin-top: 40px !important;
+    margin-bottom: 30px !important;
+}
+input::placeholder,textarea::placeholder{
+    font-size: x-large;
+}
