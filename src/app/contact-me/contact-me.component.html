@@ -7,26 +7,28 @@
             <div class="starDash"></div>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-7 border-bottom p-0">
-            <label [style.color]="'#1ABC9C'" class="p-0" >Name</label>
-            <input class="form-control border-0 p-0" placeholder="Name">
-            <ul><li class="text-danger">Not a valid email address</li></ul>
+    <form [formGroup]= "registerForm" (ngSubmit)="submitForm()">
+        <div class="row justify-content-center">
+            <div class="col-7 border-bottom p-0">
+                <label [style.color]="'#1ABC9C'" class="p-0" >Name</label>
+                <input formControlName="fName" type="text" class="form-control border-0 p-0" placeholder="Name">
+            </div>
+            <div class="col-7 border-bottom p-0">
+                <label [style.color]="'#1ABC9C'" class="p-0">Email Address</label>
+                <input formControlName="email" type="email" class="form-control border-0 p-0" placeholder="Email Address">
+                <ul *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid"><li class="text-danger">Not a valid email address</li></ul>
+            </div>
+            <div class="col-7 border-bottom p-0">
+                <label [style.color]="'#1ABC9C'" class="p-0">Phone Number</label>
+                <input formControlName="phone" type="text" class="form-control border-0 p-0" placeholder="Phone Number">
+            </div>
+            <div class="col-7 border-bottom m-0 p-0">
+                <label [style.color]="'#1ABC9C'" class="p-0">Message</label>
+                <textarea formControlName="message" type="text" cols="30" rows="8" class="form-control border-0 p-0" placeholder="Message"></textarea>
+            </div>
+            <div class="col-7 px-0">
+                <button [disabled]="registerForm.invalid" type="submit" class="btn text-white mt-3 fs-5" [style.background]="'#1ABC9C'">Send</button>
+            </div>
         </div>
-        <div class="col-7 border-bottom p-0">
-            <label [style.color]="'#1ABC9C'" class="p-0">Email Address</label>
-            <input class="form-control border-0 p-0" placeholder="Email Address">
-        </div>
-        <div class="col-7 border-bottom p-0">
-            <label [style.color]="'#1ABC9C'" class="p-0">Phone Number</label>
-            <input class="form-control border-0 p-0" placeholder="Phone Number">
-        </div>
-        <div class="col-7 border-bottom m-0 p-0">
-            <label [style.color]="'#1ABC9C'" class="p-0">Message</label>
-            <textarea name="" id="" cols="30" rows="8" class="form-control border-0 p-0" placeholder="Message"></textarea>
-        </div>
-        <div class="col-7 px-0">
-            <input class="btn text-white fs-5" [style.background]="'#1ABC9C'" value="Send" >
-        </div>
-    </div>
+    </form>
 </div>
